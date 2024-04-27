@@ -1,4 +1,5 @@
 import { Typewriter } from "react-simple-typewriter";
+import { Fade } from "react-awesome-reveal";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,6 +14,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Banner = () => {
   return (
     <div className="m-8">
+      
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -28,11 +30,12 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide className="">
+         
           <div
             data-aos="fade-left"
             data-aos-duration="3000"
             style={{
-              backgroundImage: `url('/banner4.jpg')`,
+              backgroundImage: `url('/banner102.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               minHeight: "90vh",
@@ -40,6 +43,7 @@ const Banner = () => {
             }}
           >
             <div data-aos="fade-down" data-aos-duration="3000">
+            <Fade cascade>
               <h1 className=" text-4xl lg:text-7xl text-gray-200 font-semibold p-5 lg:p-16 ">
                 <span style={{ color: "white", fontWeight: "bold" }}>
                   {/* Style will be inherited from the parent element */}
@@ -56,14 +60,12 @@ const Banner = () => {
               </h1>
 
               <p className="text-[16px] lg:text-[30px] text-lime-400 font-medium p-3 lg:p-10">
-                Jute and wooden crafts represent a beautiful blend of natural
-                materials and artisanal skill, producing items that are both
-                aesthetically pleasing and environmentally friendly. Jute, a
-                versatile natural fiber, is commonly used in crafting due to its
-                strength and sustainability.
+              Ceramics and pottery have a rich history dating back thousands of years. From ancient civilizations like the Greeks and Egyptians to contemporary artists worldwide, this art form has evolved through time.
               </p>
+              </Fade>
             </div>
           </div>
+        
         </SwiperSlide>
 
         <SwiperSlide className="">
@@ -71,7 +73,7 @@ const Banner = () => {
             data-aos="fade-down"
             data-aos-duration="4000"
             style={{
-              backgroundImage: `url('/banner3.jpg')`,
+              backgroundImage: `url('/banner104.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               minHeight: "90vh",
@@ -83,7 +85,7 @@ const Banner = () => {
                 <span style={{ color: "green", fontWeight: "bold" }}>
                   {/* Style will be inherited from the parent element */}
                   <Typewriter
-                    words={["We Provide The Best Wooden Craft"]}
+                    words={["From Clay to Craft"]}
                     loop={5}
                     cursor
                     cursorStyle="_"
@@ -93,14 +95,9 @@ const Banner = () => {
                   />
                 </span>
               </h1>
-              <h1 className=" text-[16px] lg:text-[30px] text-gray-500 font-extrabold p-3 lg:p-5">
+              <h1 className=" text-[16px] lg:text-[30px] text-gray-200 font-extrabold p-3 lg:p-5">
                 {" "}
-                Wooden crafts highlight the timeless appeal of wood as a
-                material. Craftsmen transform wood into an array of items,
-                including furniture, kitchenware, toys, and decorative pieces.
-                Each piece of wooden craftwork carries the unique grain and
-                character of the wood, creating items that are both functional
-                and visually striking.
+                From delicate porcelain vases to sturdy earthenware plates, pottery serves both aesthetic and practical purposes. Its versatility allows artists to explore various techniques like wheel throwing, hand-building, and glazing, resulting in an endless array of designs and styles. 
               </h1>
             </div>
           </div>
@@ -110,7 +107,7 @@ const Banner = () => {
             data-aos="fade-down"
             data-aos-duration="5000"
             style={{
-              backgroundImage: `url('/banner6.jpg')`,
+              backgroundImage: `url('/banner103.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               minHeight: "90vh",
@@ -118,12 +115,10 @@ const Banner = () => {
             }}
           >
             <h1 className=" text-4xl lg:text-7xl text-gray-200 font-semibold p-5 lg:p-16 ">
-              Crafting with Nature: The Artistry of Jute
+            Shaping Dreams
             </h1>
             <h1 className=" text-[18px] lg:text-[30px] text-lime-600 font-bold p-5 text-center">
-              Jute crafts often include items such as baskets, bags, rugs, and
-              decorative items. These crafts not only showcase the rustic charm
-              of jute but also offer a touch of earthiness to any space.
+            For many artists, ceramics and pottery provide a unique avenue for self-expression and creativity. Working with clay allows them to translate their ideas into tangible forms, each piece bearing the makers personal touch and artistic vision. Whether it is experimenting with different textures, exploring intricate patterns, or incorporating innovative techniques, pottery offers endless possibilities for creative exploration and innovation.
             </h1>
           </div>
         </SwiperSlide>
@@ -132,7 +127,7 @@ const Banner = () => {
             data-aos="fade-down"
             data-aos-duration="6000"
             style={{
-              backgroundImage: `url('/banner5.jpg')`,
+              backgroundImage: `url('/banner101.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               minHeight: "90vh",
@@ -140,11 +135,11 @@ const Banner = () => {
             }}
           >
             <h1 className="text-[18px] lg:text-[30px] text-center text-cyan-500 font-bold py-10 animate__animated animate__bounce">
-              <span style={{ color: "green", fontWeight: "bold" }}>
+              <span style={{ color: "whitesmoke", fontWeight: "bold" }}>
                 {/* Style will be inherited from the parent element */}
                 <Typewriter
                   words={[
-                    "Both jute and wooden crafts celebrate the beauty of natural materials and the skill of artisans who work with them. They also promote sustainability, as both jute and wood are renewable resources...",
+                    "Beyond its artistic value, ceramics and pottery often serve as therapeutic and meditative practices. The process of working with clay encourages mindfulness and focus, as artists immerse themselves in the tactile experience of shaping and molding.",
                   ]}
                   loop={5}
                   cursor
@@ -158,6 +153,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+    
     </div>
   );
 };
