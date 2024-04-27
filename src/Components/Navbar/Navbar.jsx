@@ -27,7 +27,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,7 +53,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost mx-5 text-amber-500 text-[40px] lg:text-5xl font-bold">
+        <a className="mx-5 text-amber-500 text-[40px] lg:text-5xl font-bold">
         EcoArtisan
         </a>
       </div>
