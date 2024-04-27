@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import CraftCard from "../CraftCard/CraftCard";
+import AllArtCraft from "../AllArtCraft/AllArtCraft";
 
 const CraftItem = () => {
   const craftsItem = useLoaderData();
@@ -7,14 +8,19 @@ const CraftItem = () => {
   return (
     <div>
       <h2 className="text-[30px] lg:text-[40px] font-extrabold text-center text-rose-700 py-10">
-        Craft Item :{craftsItem.length}
+        Craft Item
       </h2>
       <div className="grid md:grid-cols-2 gap-4">
       {
         craftsItem.map(craft => <CraftCard
         key={craft._id}
         craft={craft}
-        ></CraftCard>)
+        ></CraftCard>,
+        <AllArtCraft
+        key={craftsItem._id}></AllArtCraft>
+      
+      )
+        
       }
       </div>
     </div>

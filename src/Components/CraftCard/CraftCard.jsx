@@ -1,38 +1,40 @@
-
-
-const CraftCard = ({craft}) => {
-
-    const {image, item_name, subcategory_name, short_description, price, rating, customization,processing_time,
+const CraftCard = ({ craft }) => {
+  const {
+    image,
+    item_name,
+    subcategory_name,
+    short_description,
+    price,
+    rating,
+    customization,
+    processing_time,
     stock_status,
-    user_email,
-    user_name
-} = craft;
-
+  } = craft;
 
   return (
-    <div className="card card-side bg-cyan-500 shadow-xl ">
-      <figure>
-        <img
-          src={image}
-          alt=''
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{item_name}</h2>
-        <p>{subcategory_name}</p>
-        <p>{short_description}</p>
-            <p>Price: {price}</p>
-            <p>Rating: {rating}</p>
-            <p>Stock Status: {stock_status}</p>
-            <p>Time: {processing_time}</p>
-            <p>Customization: {customization}</p>
-            <p>Customization: {user_name}</p>
-            <p>Customization: {user_email}</p>
+    <div className="card flex lg:card-side bg-sky-300 shadow-xl">
+    <div className="p-4 flex">
+    <figure>
+      <img
+        src={image}
+        alt="Album"
+      />
+    </figure>
+    </div>
+    <div className="card-body">
+    <h2 className="card-title">Item Name: {item_name}</h2>
+          <p>Category: {subcategory_name}</p>
+          <p>Description: {short_description}</p>
+          <p>Price: {price}</p>
+          <p>Rating: {rating}</p>
+          <p>Stock Status: {stock_status}</p>
+          <p>Time: {processing_time}</p>
+          <p>Customization: {customization}</p> 
         <div className="card-actions justify-end">
-          <button className="btn border-none bg-rose-700 btn-primary">View Details page</button>
-        </div>
+        <button className="btn bg-rose-700 border-none btn-primary">View Details</button>
       </div>
     </div>
+  </div>
   );
 };
 

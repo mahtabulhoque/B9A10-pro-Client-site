@@ -1,11 +1,26 @@
+import { useLoaderData } from "react-router-dom";
+import ArtCard from "../ArtCard/ArtCard";
+
 
 
 const AllArtCraft = () => {
-    return (
-        <div>
-          <h2>All Craft</h2>  
-        </div>
-    );
+  const allArtCraft = useLoaderData();
+  
+  
+  return (
+    <div>
+      <h2 className="text-[30px] lg:text-[40px] font-extrabold text-center text-black py-10">
+        All Cart
+      </h2>
+      <div className="grid md:grid-cols-2 gap-4">
+        {
+          allArtCraft.map(arts => <ArtCard
+          key={arts._id}
+          arts={arts}></ArtCard>)
+        }
+      </div>
+    </div>
+  );
 };
 
 export default AllArtCraft;
