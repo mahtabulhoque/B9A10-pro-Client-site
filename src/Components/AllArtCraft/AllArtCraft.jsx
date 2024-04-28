@@ -12,7 +12,7 @@ const AllArtCraft = () => {
       <h2 className="text-[30px] lg:text-[40px] font-extrabold text-center text-black py-10">
         All Cart
       </h2>
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="w-full mx-auto py-10 space-y-10">
         {
           allArtCraft.map(arts => <ArtCard
           key={arts._id}

@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -12,6 +14,22 @@ const Register = () => {
     const photoUrl = form.photoUrl.value;
     const password = form.password.value;
     console.log(name, email, photoUrl, password);
+
+        // Password verification
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!passwordRegex.test(password)) {
+          Swal.fire({
+            title: 'Wait!',
+            text: 'Password must contain at least 6 characters, including one uppercase letter and one lowercase letter.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+          return; // Stop execution if password doesn't meet the requirements
+        }
+
+
+
+
     createUser(email,password)
       .then(result => {
         console.log(result.user);
@@ -26,7 +44,15 @@ const Register = () => {
         })
         .then(res => res.json())
         .then(data =>{
-          console.log(data);
+          if(data.insertedId){
+            Swal.fire({
+              title: 'Success!',
+              text: 'Registration Successfull',
+              icon: 'success',
+              confirmButtonText: 'OK'
+            })
+  
+          }
         })
       })
       .catch(error => {
@@ -103,7 +129,10 @@ const Register = () => {
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
+
+          <p className="text-center font-medium m-2">Do you have an account? <Link className="text-blue-600 font-bold" to='/logIn'>LogIn</Link></p>
         </div>
+       
       </div>
     </div>
   );

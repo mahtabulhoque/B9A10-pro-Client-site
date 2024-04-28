@@ -19,6 +19,7 @@ import Root from './Components/Root/Root';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import SingleItemDetails from './Components/SingleItemDetails/SingleItemDetails';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
+import PrivateRoutes from './Components/PrivateRoute/PrivateRoutes';
 
 
 const router = createBrowserRouter([
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
 
           {
             path:'/addCraftItems',
-            element:<AddCraftItem></AddCraftItem>
+            element:<PrivateRoutes><AddCraftItem></AddCraftItem></PrivateRoutes>
           },
 
           {

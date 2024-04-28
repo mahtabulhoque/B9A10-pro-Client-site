@@ -24,14 +24,14 @@ const CraftCard = ({ craft }) => {
     </figure>
     </div>
     <div className="card-body">
-    <h2 className="card-title">Item Name: {item_name}</h2>
-          <p>Category: {subcategory_name}</p>
-          <p>Description: {short_description}</p>
-          <p>Price: {price}</p>
-          <p>Rating: {rating}</p>
-          <p>Stock Status: {stock_status}</p>
-          <p>Time: {processing_time}</p>
-          <p>Customization: {customization}</p> 
+    <h2 className="card-title text-2xl">Item Name: {item_name}</h2>
+          <p className="text-gray-800 font-medium">Category: {subcategory_name}</p>
+          <p className="text-black font-semibold">Description: {short_description}</p>
+          <p className="text-[20px] font-bold">Price: {price}</p>
+          <p className="text-[20px] text-green-600 font-bold">Rating: {rating}</p>
+          <p className="text-[20px] font-bold">Stock Status: {stock_status}</p>
+          <p className="text-[20px] text-rose-800 font-bold">Time: {processing_time}</p>
+          <p className="text-[20px] text-sky-500 font-medium">Customization: {customization}</p> 
         <div className="card-actions justify-end">
 
         <Link to={`/addCraftItem/${_id}`}>

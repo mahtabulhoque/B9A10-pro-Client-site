@@ -1,47 +1,42 @@
 import { Link } from "react-router-dom";
 
 const ArtCard = ({ arts }) => {
-  const {id,
-    image,
-    item_name,
-    subcategory_name,
-    short_description,
-    price,
-    rating,
-    customization,
-    processing_time,
-    stock_status,
-  } = arts;
+  const {id, subcategory_name, short_description, stock_status,image } = arts;
 
   return (
-    <div className="card flex lg:card-side  bg-slate-200 shadow-xl">
-      <div className="p-4 flex rounded-xl">
-        <figure>
-          <img src={image} alt="Album" />
-        </figure>
-      </div>
-      <div className="card-body">
-        <h2 className="card-title">Item Name: {item_name}</h2>
-        <p>Category: {subcategory_name}</p>
-        <p>Description: {short_description}</p>
-        <p>Price: {price}</p>
-        <p>Rating: {rating}</p>
-        <p>Stock Status: {stock_status}</p>
-        <p>Time: {processing_time}</p>
-        <p>Customization: {customization}</p>
-        <div className="card-actions justify-end">
-        
+    <div className="overflow-x-auto">
+  <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+    <thead className="bg-gray-200 text-xl text-gray-800 uppercase">
+      <tr>
+        <th className="py-3 px-4 text-left">Name</th>
+        <th className="py-3 px-4 text-left">Description</th>
+        <th className="py-3 px-4 text-left">Stock Status</th>
+        <th className="py-3 px-4 text-left">Actions</th>
+        {/* New cell for image */}
+        <th className="py-3 px-4 text-left">Item Photo</th>
+      </tr>
+    </thead>
+    <tbody className="text-gray-500">
+      <tr className="bg-gray-100 text-[18px] font-medium">
+        <td className="py-3 px-4 border-b">{subcategory_name}</td>
+        <td className="py-3 px-4 border-b">{short_description}</td>
+        <td className="py-3 px-4 border-b">{stock_status}</td>
+        <td className="py-3 px-4 border-b">
           <Link to={`/addCraftItem/${id}`}>
-
-          <button className="btn bg-yellow-600 text-[16px] font-bold border-none btn-primary">
-            View Details
-          </button>
-          
+            <button className="bg-cyan-600 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+              View Details
+            </button>
           </Link>
-      
-        </div>
-      </div>
-    </div>
+        </td>
+        {/* Image cell */}
+        <td className="py-3 px-4 border-b">
+          <img src={image} alt='' className="h-12 w-12 object-cover rounded-full" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
   );
 };
 
