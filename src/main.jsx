@@ -16,17 +16,26 @@ import {
 import LogIn from './Components/LogIn/LogIn';
 import Register from './Components/Register/Register';
 import Root from './Components/Root/Root';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
+import SingleItemDetails from './Components/SingleItemDetails/SingleItemDetails';
+
 
 const router = createBrowserRouter([
   {
       path:'/',
       element:<Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
           {
             path:"/",
             element:<Home></Home>,
             loader: () => fetch('http://localhost:5000/addCraftItem')
           },
+          
+          
+           {
+            element:<ErrorPage></ErrorPage>
+           },
 
           {
             path:"/allArtCraft",
@@ -35,13 +44,20 @@ const router = createBrowserRouter([
           },
 
           {
-            path:'/addCraftItem',
+            path:'/addCraftItems',
             element:<AddCraftItem></AddCraftItem>
           },
 
           {
+            path:'/addCraftItem/:id',
+            element:<SingleItemDetails></SingleItemDetails>,
+            loader:({params}) => fetch(`http://localhost:5000/addCraftItem/${params.id}`)
+          },
+
+          {
             path:'/myArtCraft',
-            element:<MyArtCraft></MyArtCraft>
+            element:<MyArtCraft></MyArtCraft>,
+            loader: () => fetch('http://localhost:5000/addCraftItem')
           },
 
           {

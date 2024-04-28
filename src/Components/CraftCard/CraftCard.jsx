@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const CraftCard = ({ craft }) => {
-  const {
+  const {_id,
     image,
     item_name,
     subcategory_name,
@@ -12,8 +14,8 @@ const CraftCard = ({ craft }) => {
   } = craft;
 
   return (
-    <div className="card flex lg:card-side bg-sky-300 shadow-xl">
-    <div className="p-4 flex">
+    <div className="card flex lg:card-side bg-gray-200 shadow-xl">
+    <div className="p-4 flex rounded-xl">
     <figure>
       <img
         src={image}
@@ -31,7 +33,10 @@ const CraftCard = ({ craft }) => {
           <p>Time: {processing_time}</p>
           <p>Customization: {customization}</p> 
         <div className="card-actions justify-end">
-        <button className="btn bg-rose-700 border-none btn-primary">View Details</button>
+
+        <Link to={`/addCraftItem/${_id}`}>
+        <button className="btn bg-amber-600 border-none btn-primary">View Details</button>
+        </Link>
       </div>
     </div>
   </div>

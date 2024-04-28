@@ -59,7 +59,7 @@ const Banner = () => {
                 </span>
               </h1>
 
-              <p className="text-[16px] lg:text-[30px] text-lime-400 font-medium p-3 lg:p-10">
+              <p className="text-[16px] lg:text-[30px] text-gray-100 font-medium p-3 lg:p-10">
               Ceramics and pottery have a rich history dating back thousands of years. From ancient civilizations like the Greeks and Egyptians to contemporary artists worldwide, this art form has evolved through time.
               </p>
               </Fade>
@@ -117,7 +117,7 @@ const Banner = () => {
             <h1 className=" text-4xl lg:text-7xl text-gray-200 font-semibold p-5 lg:p-16 ">
             Shaping Dreams
             </h1>
-            <h1 className=" text-[18px] lg:text-[30px] text-lime-600 font-bold p-5 text-center">
+            <h1 className=" text-[18px] lg:text-[30px] text-gray-200 font-semibold p-5 text-center">
             For many artists, ceramics and pottery provide a unique avenue for self-expression and creativity. Working with clay allows them to translate their ideas into tangible forms, each piece bearing the makers personal touch and artistic vision. Whether it is experimenting with different textures, exploring intricate patterns, or incorporating innovative techniques, pottery offers endless possibilities for creative exploration and innovation.
             </h1>
           </div>

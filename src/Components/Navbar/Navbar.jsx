@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+
   const links = (
     <>
-     <div className="lg:flex bg-green-600 rounded-xl text-gray-200">
+     <div className="lg:flex rounded-xl">
      <li>
         <NavLink to="/">Home</NavLink>
       </li>
@@ -11,7 +12,7 @@ const Navbar = () => {
         <NavLink to="/allArtCraft">All Art & Craft</NavLink>
       </li>
       <li>
-        <NavLink to="/addCraftItem">Add Craft Item</NavLink>
+        <NavLink to="/addCraftItems">Add Craft Item</NavLink>
       </li>
       <li>
         <NavLink to="/myArtCraft">My Art & Craft List</NavLink>
@@ -53,7 +54,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="mx-5 text-amber-500 text-[40px] lg:text-5xl font-bold">
+        <a className="mx-5 text-amber-600 text-[40px] lg:text-5xl font-bold">
         EcoArtisan
         </a>
       </div>
