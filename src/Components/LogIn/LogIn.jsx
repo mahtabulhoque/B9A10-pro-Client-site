@@ -4,9 +4,13 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const LogIn = () => {
-  const { signInUser, signInWithGoogle } = useContext(AuthContext); // Import signInWithGoogle
+  const { signInUser, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext); // Import signInWithGoogle
   const location = useLocation();
   const navigate = useNavigate();
+
+
+    // Email & password Login
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -38,7 +42,7 @@ const LogIn = () => {
     }
   };
 
-
+    // Google Login
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -63,8 +67,32 @@ const LogIn = () => {
       });
   };
 
+  // GitHub Login
 
-  
+  const handleGitHubSignIn = () => {
+    signInWithGitHub()
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire({
+          title: "Success!",
+          text: "You have successfully signed in with Google.",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          title: "Error!",
+          text: "Failed to sign in with Google.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
+  };
+
+
+
 
   return (
     <div className="hero min-h-screen bg-gray-00 rounded-3xl">
@@ -115,20 +143,37 @@ const LogIn = () => {
             </Link>
           </p>
 
-        <div>
-          <h1 className="text-center font-bold text-slate-500 text-[18px]">You can also Login with</h1>
-         <div>
-         <p>
-            <button
-              onClick={handleGoogleSignIn}
-              className="btn btn-ghost font-bold text-[16px] text-green-500 "
-            >
-              Google
-            </button>
-          </p>
-         </div>
-        </div>
+          <div className="">
+            <h1 className="text-center font-bold text-slate-500 text-[18px]">
+              You can also Login with
+            </h1>
 
+            <div className="flex justify-evenly">
+              <div>
+                <p>
+                  <button
+                    onClick={handleGoogleSignIn}
+                    className="btn btn-ghost font-bold text-[16px] text-green-500 "
+                  >
+                    Google
+                  </button>
+                </p>
+              </div>
+
+              <div>
+                <p>
+                  <button
+                    onClick={handleGitHubSignIn}
+                    className="btn btn-ghost font-bold text-[16px] "
+                  >
+                    Github
+                  </button>
+                </p>
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </div>
     </div>

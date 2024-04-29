@@ -11,7 +11,7 @@ const ErrorPage = () => {
         <h1 className="text-center py-10 text-[#131313] font-bold text-[60px] rounded-3xl">
           Page not found
         </h1>
-        <Link className="text-[40px] text-red-700" to="/">
+        <Link to={'/'} className="text-[40px] text-red-700">
           Back to home
         </Link>
       </div>

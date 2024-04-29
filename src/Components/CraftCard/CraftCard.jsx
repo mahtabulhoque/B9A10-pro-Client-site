@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const CraftCard = ({ craft }) => {
   const {
@@ -41,19 +41,19 @@ const CraftCard = ({ craft }) => {
   );
 };
 
-CraftCard.propTypes = {
-  craft: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    item_name: PropTypes.string.isRequired,
-    subcategory_name: PropTypes.string.isRequired,
-    short_description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
-    customization: PropTypes.bool.isRequired,
-    processing_time: PropTypes.string.isRequired,
-    stock_status: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// CraftCard.propTypes = {
+//   craft: PropTypes.shape({
+//     _id: PropTypes.string.isRequired,
+//     image: PropTypes.string.isRequired,
+//     item_name: PropTypes.string.isRequired,
+//     subcategory_name: PropTypes.string.isRequired,
+//     short_description: PropTypes.string.isRequired,
+//     price: PropTypes.number.isRequired,
+//     rating: PropTypes.number.isRequired,
+//     customization: PropTypes.bool.isRequired,
+//     processing_time: PropTypes.string.isRequired,
+//     stock_status: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
 
 export default CraftCard;

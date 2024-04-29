@@ -1,23 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 
-const SingleItemDetails = () => {
-  const itemDetails = useLoaderData();
-  console.log(itemDetails);
-  const {
-    item_name,
-    subcategory_name,
-    short_description,
-    price,
-    rating,
-    stock_status,
-    processing_time,
-    customization,
-    image,
-  } = itemDetails || {}; // Providing a default empty object
+const UpdateData = () => {
+  const updatedCard = useLoaderData();
 
-  if (!item_name) {
-    return <div>Loading...</div>; // Display a loading indicator while data is being fetched
-  }
+  const { _id,processing_time, image,short_description,subcategory_name, item_name, price, rating, customization, stock_status } =
+  updatedCard;
+
+
 
   return (
     <div>
@@ -50,11 +39,13 @@ const SingleItemDetails = () => {
           <p className="text-[20px] text-sky-500 font-medium">
             Customization: {customization}
           </p>
-          <div className="card-actions justify-end"></div>
+          <div className="card-actions justify-end">
+            <button className="btn">Upadte</button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default SingleItemDetails;
+export default UpdateData;

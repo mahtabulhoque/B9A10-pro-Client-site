@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 
 
 
 
 const ArtCard = ({ arts }) => {
-  const { id, subcategory_name, short_description, stock_status, image } = arts;
+  const { _id, subcategory_name, short_description, stock_status, image } = arts;
 
   return (
     <div className="overflow-x-auto">
@@ -27,7 +27,7 @@ const ArtCard = ({ arts }) => {
             <td className="py-3 px-4 border-b">{short_description}</td>
             <td className="py-3 px-4 border-b">{stock_status}</td>
             <td className="py-3 px-4 border-b">
-              <Link to={`/addCraftItem/${id}`}>
+              <Link to={`/addCraftItem/${_id}`}>
                 <button className="bg-cyan-600 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                   View Details
                 </button>
@@ -44,14 +44,14 @@ const ArtCard = ({ arts }) => {
   );
 };
 
-ArtCard.propTypes = {
-  arts: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    subcategory_name: PropTypes.string.isRequired,
-    short_description: PropTypes.string.isRequired,
-    stock_status: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// ArtCard.propTypes = {
+//   arts: PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     subcategory_name: PropTypes.string.isRequired,
+//     short_description: PropTypes.string.isRequired,
+//     stock_status: PropTypes.string.isRequired,
+//     image: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
 
 export default ArtCard;

@@ -5,8 +5,10 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState(() => {
 
+    return localStorage.getItem('theme') || 'light';
+  });
 
   const handleLogOut = () => {
     logOut()
@@ -16,25 +18,14 @@ const Navbar = () => {
       });
   };
 
-  
-useEffect(() => {
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.querySelector('html').setAttribute('data-theme', theme);
+  }, [theme]);
 
-  localStorage.setItem('theme', theme)
-  const localTheme = localStorage.getItem('theme')
-  document.querySelector('html').setAttribute('data-theme', localTheme)
-},[theme])  
-
-
-
-  const handleToggle = (e) =>{
-    if(e.target.checked){
-      setTheme('night')
-    }else{
-      setTheme('light')
-    }
-
-  }
-  console.log(theme);
+  const handleToggle = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'night' : 'light'));
+  };
 
   const links = (
     <div className="lg:flex rounded-xl">
@@ -96,7 +87,13 @@ useEffect(() => {
       <div className="navbar-end gap-9">
         
        <div>
-       <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller mt-24"/>
+       <input
+          onChange={handleToggle}
+          type="checkbox"
+          value="synthwave"
+          className="toggle theme-controller mt-24"
+          checked={theme === 'night'}
+        />
        </div>
 
         {user ? (

@@ -20,6 +20,7 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import SingleItemDetails from './Components/SingleItemDetails/SingleItemDetails';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
 import PrivateRoutes from './Components/PrivateRoute/PrivateRoutes';
+import UpdateData from './Components/UpdateData/UpdateData';
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,12 @@ const router = createBrowserRouter([
             path:'/myArtCraft',
             element:<PrivateRoutes><MyArtCraft></MyArtCraft></PrivateRoutes>,
             loader: () => fetch('http://localhost:5000/addCraftItem')
+          },
+
+          {
+           path: 'updateData/:id',
+           element: <UpdateData></UpdateData>,
+           loader: ({params}) => fetch(`http://localhost:5000/addCraftItem/${params.id}`)
           },
 
           {
