@@ -3,9 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2';
 
-
 const LogIn = () => {
-  const { signInUser  } = useContext(AuthContext);
+  const { signInUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -17,10 +16,17 @@ const LogIn = () => {
 
     try {
       // Attempt to log in
-      const result = await signInUser (email, password);
+      const result = await signInUser(email, password);
       console.log(result);
       // If login successful, navigate to the previous location or home
       navigate(location?.state?.from ? location.state.from : '/');
+      // Show success alert
+      Swal.fire({
+        title: 'Success!',
+        text: 'You have successfully logged in.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
     } catch (error) {
       // If login fails, display error using SweetAlert2
       Swal.fire({
@@ -75,7 +81,7 @@ const LogIn = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
-          <p className="text-center m-3">Dont have an account? <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
+          <p className="text-center m-3">Do not have an account? <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
         </div>
       </div>
     </div>
