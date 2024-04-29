@@ -70,8 +70,8 @@ const LogIn = () => {
     <div className="hero min-h-screen bg-gray-00 rounded-3xl">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-2xl lg:text-5xl text-slate-600 font-bold">Login now!</h1>
-          <p className="py-6 text-cyan-800 text-2xl">Please fill out this form</p>
+          <h1 className="text-2xl lg:text-5xl font-bold">Login now!</h1>
+          <p className="py-6 text-2xl">Please fill out this form</p>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body">

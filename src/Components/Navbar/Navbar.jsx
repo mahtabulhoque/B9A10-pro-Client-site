@@ -93,15 +93,15 @@ useEffect(() => {
         </ul>
       </div>
 
-      <div className="navbar-end gap-4">
+      <div className="navbar-end gap-9">
         
-       <div className="">
-       <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
+       <div>
+       <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller mt-24"/>
        </div>
 
         {user ? (
           <>
-            <span>{user.email}</span>
+            <span className="hidden lg:inline-block">{user.email}</span>
             {user.photoUrl ? (
               <img
                 src={user.photoUrl}
@@ -109,7 +109,7 @@ useEffect(() => {
                 className="h-8 w-8 rounded-full"
               />
             ) : (
-              <span>No photo</span> 
+              <span className="hidden lg:inline-block">No photo</span> 
             )}
             <button onClick={handleLogOut} className="btn">
               Log Out
