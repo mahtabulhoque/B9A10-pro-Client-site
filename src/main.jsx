@@ -52,7 +52,7 @@ const router = createBrowserRouter([
 
           {
             path:'/addCraftItem/:id',
-            element:<SingleItemDetails></SingleItemDetails>,
+            element:<PrivateRoutes><SingleItemDetails></SingleItemDetails></PrivateRoutes>,
             loader:({params}) => fetch(`http://localhost:5000/addCraftItem/${params.id}`)
           },
 

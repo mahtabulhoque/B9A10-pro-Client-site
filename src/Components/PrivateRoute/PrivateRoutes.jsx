@@ -1,25 +1,37 @@
-import { useContext } from "react";
-
-import { Navigate, useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Navigate } from "react-router-dom";
 
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
-  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (loading) {
-    return(
-        <div className="text-center py-16">
-            <span className="loading loading-spinner text-center  loading-lg"></span>
-        </div>
-    )
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500); 
+
+    return () => clearTimeout(timer);
+  }, []); 
+
+  if (isLoading || loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
   }
 
-  if (!user) {
-    return <Navigate to='/logIn' state={location?.pathname}></Navigate>
+  if (user) {
+    return children;
   }
 
-  return <div>{children}</div>;
+  return <Navigate to="/logIn" />;
+};
+
+PrivateRoutes.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default PrivateRoutes;
