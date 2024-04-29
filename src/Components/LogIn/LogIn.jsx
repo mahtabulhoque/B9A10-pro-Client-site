@@ -90,20 +90,27 @@ const LogIn = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
-          <p className="text-center m-3">
+          <p className="text-center text-[18px] p-2 m-3">
             Do not have an account?{" "}
             <Link className="text-blue-600 font-bold" to="/register">
               Register
             </Link>
           </p>
-          <p>
+
+        <div>
+          <h1 className="text-center font-bold text-slate-700 text-[18px]">You can also Login with</h1>
+         <div>
+         <p>
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-ghost text-[16px] text-green-500 "
+              className="btn btn-ghost font-bold text-[16px] text-green-500 "
             >
               Google
             </button>
           </p>
+         </div>
+        </div>
+
         </div>
       </div>
     </div>

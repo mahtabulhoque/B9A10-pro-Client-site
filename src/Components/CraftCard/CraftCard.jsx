@@ -48,7 +48,7 @@ CraftCard.propTypes = {
     item_name: PropTypes.string.isRequired,
     subcategory_name: PropTypes.string.isRequired,
     short_description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
     customization: PropTypes.bool.isRequired,
     processing_time: PropTypes.string.isRequired,
