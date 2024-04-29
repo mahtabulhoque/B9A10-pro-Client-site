@@ -1,42 +1,51 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const LogIn = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, signInWithGoogle } = useContext(AuthContext); // Import signInWithGoogle
   const location = useLocation();
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    const email = form.get('email');
-    const password = form.get('password');
+    const email = form.get("email");
+    const password = form.get("password");
 
     try {
-      // Attempt to log in
       const result = await signInUser(email, password);
       console.log(result);
-      // If login successful, navigate to the previous location or home
-      navigate(location?.state?.from ? location.state.from : '/');
-      // Show success alert
+      e.target.reset();
+
+      navigate(location?.state?.from ? location.state.from : "/");
+
       Swal.fire({
-        title: 'Success!',
-        text: 'You have successfully logged in.',
-        icon: 'success',
-        confirmButtonText: 'OK'
+        title: "Success!",
+        text: "You have successfully logged in.",
+        icon: "success",
+        confirmButtonText: "OK",
       });
     } catch (error) {
-      // If login fails, display error using SweetAlert2
       Swal.fire({
-        title: 'Error!',
-        text: 'Invalid email or password.',
-        icon: 'error',
-        confirmButtonText: 'OK'
+        title: "Error!",
+        text: "Invalid email or password.",
+        icon: "error",
+        confirmButtonText: "OK",
       });
       console.error(error);
     }
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -81,7 +90,20 @@ const LogIn = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
-          <p className="text-center m-3">Do not have an account? <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
+          <p className="text-center m-3">
+            Do not have an account?{" "}
+            <Link className="text-blue-600 font-bold" to="/register">
+              Register
+            </Link>
+          </p>
+          <p>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-ghost text-[16px] text-green-500 "
+            >
+              Google
+            </button>
+          </p>
         </div>
       </div>
     </div>
