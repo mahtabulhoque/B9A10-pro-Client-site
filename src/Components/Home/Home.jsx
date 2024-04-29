@@ -6,17 +6,17 @@ import FuturePlan from "../FuturePlan/FuturePlan";
 
 const Home = () => {
     return (
-        <div className="py-8">
+        <div className="lg:py-8">
            <Banner></Banner>
            <CraftItem></CraftItem>
-           <div className="py-10">
+           <div className="lg:py-10">
            <div className="py-10 text-center font-extrabold text-4xl text-gray-600">
             <h1>Our Future Plan</h1>
            </div>
            <FuturePlan></FuturePlan>
            </div>
 
-           <div className="py-10">
+           <div className="lg:py-5">
            <div className="py-10 text-center font-extrabold text-4xl text-gray-600">
             <h1>Meet Our Artist</h1>
            </div>

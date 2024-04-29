@@ -93,11 +93,12 @@ useEffect(() => {
         </ul>
       </div>
 
-      <div>
-      <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
-      </div>
-
       <div className="navbar-end gap-4">
+        
+       <div className="space-y-5">
+       <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
+       </div>
+
         {user ? (
           <>
             <span>{user.email}</span>

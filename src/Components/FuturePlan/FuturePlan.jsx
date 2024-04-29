@@ -39,8 +39,8 @@ const FuturePlan = () => {
           <div style={{ position: "relative" }}>
             <img className="rounded-xl"  src="/Potter.jpg" alt="" />
             <div style={textStyle}>
-            <p className="text-[40px] font-bold text-cyan-300">Terra Cotta Pottery</p>
-              <p className="text-yellow-400 text-[20px]">Our Terra Cotta Pottery is not just about tradition; it is a canvas for innovation. From classic pots to avant-garde sculptures, our future collection will showcase the versatility of Terra Cotta as a medium for artistic expression.</p>
+            <p className="text-[24px] lg:text-[40px] font-bold text-[#FFFF]">Terra Cotta Pottery</p>
+              <p className="text-yellow-400 text-[14px] lg:text-[25px]">Our Terra Cotta Pottery is not just about tradition; it is a canvas for innovation. From classic pots to avant-garde sculptures, our future collection will showcase the versatility of Terra Cotta as a medium for artistic expression.</p>
               </div>
           </div>
         </SwiperSlide>
@@ -50,8 +50,8 @@ const FuturePlan = () => {
           <div style={{ position: "relative" }}>
             <img className="rounded-xl"  src="/clayArt.jpg" alt="" />
             <div style={textStyle}>
-              <p className="text-[40px] font-bold text-white">Aesthetic Clay Sculpture</p>
-              <p>OurAesthetic Clay Sculpture Art is a visionary project that combines the traditional art of clay sculpture with a contemporary aesthetic.</p>
+              <p className="text-[24px] lg:text-[40px] font-bold text-white">Aesthetic Clay Sculpture</p>
+              <p className="text-[14px] lg:text-[25px]">OurAesthetic Clay Sculpture Art is a visionary project that combines the traditional art of clay sculpture with a contemporary aesthetic.</p>
               </div>
           </div>
         </SwiperSlide>
@@ -61,8 +61,8 @@ const FuturePlan = () => {
           <div style={{ position: "relative" }}>
             <img src="/Decor.jpg" className="rounded-xl" alt="" />
             <div style={textStyle}>
-              <p className="text-[40px] font-bold text-amber-300">Home Decor Art</p>
-              <p>At EcoArtisan, we are passionate about transforming living spaces into vibrant, inspiring environments. Our future plan involves creating a curated collection of home decor art that embodies elegance, creativity, and personality.</p>
+              <p className="text-[24px] lg:text-[40px] font-bold text-amber-300">Home Decor Art</p>
+              <p className="text-[14px] lg:text-[25px]">At EcoArtisan, we are passionate about transforming living spaces into vibrant, inspiring environments. Our future plan involves creating a curated collection of home decor art that embodies elegance, creativity, and personality.</p>
               </div>
           </div>
         </SwiperSlide>
