@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+
   const { user, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState('light')
+
 
   const handleLogOut = () => {
     logOut()
@@ -12,6 +15,26 @@ const Navbar = () => {
         console.error(error);
       });
   };
+
+  
+useEffect(() => {
+
+  localStorage.setItem('theme', theme)
+  const localTheme = localStorage.getItem('theme')
+  document.querySelector('html').setAttribute('data-theme', localTheme)
+},[theme])  
+
+
+
+  const handleToggle = (e) =>{
+    if(e.target.checked){
+      setTheme('night')
+    }else{
+      setTheme('light')
+    }
+
+  }
+  console.log(theme);
 
   const links = (
     <div className="lg:flex rounded-xl">
@@ -71,21 +94,21 @@ const Navbar = () => {
       </div>
 
       <div>
-      <input type="checkbox" value="synthwave" className="toggle theme-controller"/>
+      <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
       </div>
 
       <div className="navbar-end gap-4">
         {user ? (
           <>
             <span>{user.email}</span>
-            {user.photoUrl ? ( // Check if user has a photoUrl
+            {user.photoUrl ? (
               <img
                 src={user.photoUrl}
                 alt="User"
                 className="h-8 w-8 rounded-full"
               />
             ) : (
-              <span>No photo</span> // Show some indication if no photoUrl available
+              <span>No photo</span> 
             )}
             <button onClick={handleLogOut} className="btn">
               Log Out
@@ -93,7 +116,7 @@ const Navbar = () => {
           </>
         ) : (
           <Link to={"/logIn"}>
-            <button className="btn font-bold bg-cyan-500 ">LogIn</button>
+            <button className="btn font-bold bg-green-500 ">LogIn</button>
           </Link>
         )}
       </div>

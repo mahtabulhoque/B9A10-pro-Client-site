@@ -9,7 +9,7 @@ const AllArtCraft = () => {
   
   return (
     <div>
-      <h2 className="text-[30px] lg:text-[40px] font-extrabold text-center text-black py-10">
+      <h2 className="text-[30px] lg:text-[40px] font-extrabold text-center text-gray-500 py-10">
         All Cart
       </h2>
       <div className="w-full mx-auto py-10 space-y-10">
