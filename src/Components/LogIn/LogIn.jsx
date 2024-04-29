@@ -38,21 +38,39 @@ const LogIn = () => {
     }
   };
 
+
+
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          title: "Success!",
+          text: "You have successfully signed in with Google.",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        navigate(location?.state?.from ? location.state.from : "/");
       })
       .catch((error) => {
         console.error(error);
+        Swal.fire({
+          title: "Error!",
+          text: "Failed to sign in with Google.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       });
   };
+
+
+  
 
   return (
     <div className="hero min-h-screen bg-gray-00 rounded-3xl">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl text-slate-600 font-bold">Login now!</h1>
+          <h1 className="text-2xl lg:text-5xl text-slate-600 font-bold">Login now!</h1>
           <p className="py-6 text-cyan-800 text-2xl">Please fill out this form</p>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

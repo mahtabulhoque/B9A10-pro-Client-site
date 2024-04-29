@@ -11,7 +11,7 @@ const Artists = () => {
           />
         </figure>
         <div className="card-body items-center text-center ">
-          <h2 className="card-title font-bold text-2xl">Name: Jonathon</h2>
+          <h2 className="card-title text-slate-700 font-bold text-2xl">Name: Jonathon</h2>
           <p className="text-[16px] font-medium text-gray-500">He is our most experienced Sculpture Artist</p>
           
         </div>
@@ -26,13 +26,13 @@ const Artists = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-        <h2 className="card-title font-bold text-2xl">Name: Sishu Gupta</h2>
+        <h2 className="card-title font-bold text-slate-700 text-2xl">Name: Sishu Gupta</h2>
           <p className="text-[16px] font-medium text-gray-500">He is our most experienced clay Artist</p>
           
         </div>
       </div>
 
-      <div className="card w-full  shadow-xl bg-slate-300">
+      <div className="card w-full mb-5  shadow-xl bg-slate-300">
         <figure className="px-10 pt-10">
           <img
             src="/artist3.jpg"
@@ -41,7 +41,7 @@ const Artists = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-        <h2 className="card-title font-bold text-2xl">Name: Jonathon</h2>
+        <h2 className="card-title text-slate-700 font-bold text-2xl">Name: Jonathon</h2>
           <p className="text-[16px] font-medium text-gray-500">He is our Clay master</p>
           
         </div>

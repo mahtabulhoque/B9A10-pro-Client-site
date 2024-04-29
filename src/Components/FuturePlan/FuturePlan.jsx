@@ -40,7 +40,7 @@ const FuturePlan = () => {
             <img className="rounded-xl"  src="/Potter.jpg" alt="" />
             <div style={textStyle}>
             <p className="text-[24px] lg:text-[40px] font-bold text-[#FFFF]">Terra Cotta Pottery</p>
-              <p className="text-yellow-400 text-[14px] lg:text-[25px]">Our Terra Cotta Pottery is not just about tradition; it is a canvas for innovation. From classic pots to avant-garde sculptures, our future collection will showcase the versatility of Terra Cotta as a medium for artistic expression.</p>
+              <p className="text-cyan-300  text-[14px] lg:text-[25px] font-semibold">Our Terra Cotta Pottery is not just about tradition; it is a canvas for innovation. From classic pots to avant-garde sculptures, our future collection will showcase the versatility of Terra Cotta as a medium for artistic expression.</p>
               </div>
           </div>
         </SwiperSlide>
