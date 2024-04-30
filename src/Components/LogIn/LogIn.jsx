@@ -153,7 +153,7 @@ const LogIn = () => {
                 <p>
                   <button
                     onClick={handleGoogleSignIn}
-                    className="btn btn-ghost font-bold text-[16px] text-green-500 "
+                    className="btn btn-ghost font-bold text-[20px] text-green-500 "
                   >
                     Google
                   </button>
@@ -164,7 +164,7 @@ const LogIn = () => {
                 <p>
                   <button
                     onClick={handleGitHubSignIn}
-                    className="btn btn-ghost font-bold text-[16px] "
+                    className="btn btn-ghost font-bold text-[20px] "
                   >
                     Github
                   </button>
