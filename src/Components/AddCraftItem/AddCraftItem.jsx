@@ -40,6 +40,7 @@ const AddCraftItem = () => {
           icon: 'success',
           confirmButtonText: 'OK'
         })
+        window.location.reload();
       }
     });
 
