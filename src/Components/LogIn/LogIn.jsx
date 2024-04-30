@@ -148,12 +148,12 @@ const LogIn = () => {
               You can also Login with
             </h1>
 
-            <div className="flex justify-evenly">
+            <div className="flex justify-evenly pb-6">
               <div>
                 <p>
                   <button
                     onClick={handleGoogleSignIn}
-                    className="btn btn-ghost font-bold text-[20px] text-green-500 "
+                    className="btn font-bold text-[20px] text-green-500 "
                   >
                     Google
                   </button>
@@ -164,7 +164,7 @@ const LogIn = () => {
                 <p>
                   <button
                     onClick={handleGitHubSignIn}
-                    className="btn btn-ghost font-bold text-[20px] "
+                    className="btn font-bold text-[20px] "
                   >
                     Github
                   </button>

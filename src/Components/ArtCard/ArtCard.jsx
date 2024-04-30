@@ -28,7 +28,7 @@ const ArtCard = ({ arts }) => {
             <td className="py-3 px-4 border-b">{stock_status}</td>
             <td className="py-3 px-4 border-b">
               <Link to={`/addCraftItem/${_id}`}>
-                <button className="bg-cyan-600 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                <button className="bg-amber-600 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                   View Details
                 </button>
               </Link>

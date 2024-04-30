@@ -23,7 +23,7 @@ const AddCraftItem = () => {
       user_name: e.target.user_name.value,
     };
 
-    fetch('https://b9-a10-assignment-client-server.vercel.app/addCraftItem/', {
+    fetch('https://b9-a10-assignment-client-server.vercel.app/addCraftItem', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
