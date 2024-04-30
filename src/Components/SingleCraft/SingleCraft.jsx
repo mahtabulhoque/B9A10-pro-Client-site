@@ -33,7 +33,7 @@ const SingleCraft = ({ data }) => {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addCraftItem/${_id}`, {
+        fetch(`https://b9-a10-assignment-client-server.vercel.app/addCraftItem/${_id}`, {
           method: 'DELETE'
         })
           .then((res) => res.json())

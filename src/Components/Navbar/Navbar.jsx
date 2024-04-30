@@ -74,7 +74,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="mx-5 text-amber-600 text-[40px] lg:text-5xl font-bold">
+        <a className="mx-5 text-amber-600 text-[30px] lg:text-5xl font-bold">
           EcoArtisan
         </a>
       </div>
@@ -84,14 +84,14 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end gap-9">
+      <div className="navbar-end gap-4">
         
        <div>
        <input
           onChange={handleToggle}
           type="checkbox"
           value="synthwave"
-          className="toggle theme-controller mt-24"
+          className="toggle ml-7 mt-4 lg:mt-2  theme-controller"
           checked={theme === 'night'}
         />
        </div>

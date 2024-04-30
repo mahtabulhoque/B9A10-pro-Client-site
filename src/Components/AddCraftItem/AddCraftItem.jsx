@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const AddCraftItem = () => {
+
+  const {user} = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +23,7 @@ const AddCraftItem = () => {
       user_name: e.target.user_name.value,
     };
 
-    fetch('http://localhost:5000/addCraftItem/', {
+    fetch('https://b9-a10-assignment-client-server.vercel.app/addCraftItem/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

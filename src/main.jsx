@@ -32,7 +32,7 @@ const router = createBrowserRouter([
           {
             path:"/",
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/addCraftItem')
+            loader: () => fetch('https://b9-a10-assignment-client-server.vercel.app/addCraftItem')
           },
           
           
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
           {
             path:"/allArtCraft",
             element:<AllArtCraft></AllArtCraft>,
-            loader: () => fetch('http://localhost:5000/addCraftItem')
+            loader: () => fetch('https://b9-a10-assignment-client-server.vercel.app/addCraftItem')
           },
 
           {
@@ -54,19 +54,19 @@ const router = createBrowserRouter([
           {
             path:'/addCraftItem/:id',
             element:<PrivateRoutes><SingleItemDetails></SingleItemDetails></PrivateRoutes>,
-            loader:({params}) => fetch(`http://localhost:5000/addCraftItem/${params.id}`)
+            loader:({params}) => fetch(`https://b9-a10-assignment-client-server.vercel.app/addCraftItem/${params.id}`)
           },
 
           {
             path:'/myArtCraft',
             element:<PrivateRoutes><MyArtCraft></MyArtCraft></PrivateRoutes>,
-            loader: () => fetch('http://localhost:5000/addCraftItem')
+            loader: () => fetch('https://b9-a10-assignment-client-server.vercel.app/addCraftItem')
           },
 
           {
            path: 'updateData/:id',
            element: <UpdateData></UpdateData>,
-           loader: ({params}) => fetch(`http://localhost:5000/addCraftItem/${params.id}`)
+           loader: ({params}) => fetch(`https://b9-a10-assignment-client-server.vercel.app/addCraftItem/${params.id}`)
           },
 
           {

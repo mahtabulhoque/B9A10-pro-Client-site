@@ -6,10 +6,10 @@ const MyArtCraft = () => {
   const { user } = useContext(AuthContext);
   const [craftData, setCraftData] = useState([]);
 
-  // const url = `http://localhost:5000/craft-by-email?user_email=${user?.email}`;
+  // const url = `https://b9-a10-assignment-client-server.vercel.app/craft-by-email?user_email=${user?.email}`;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/craft-by-email?user_email=${user?.email}`)
+    fetch(`https://b9-a10-assignment-client-server.vercel.app/craft-by-email?user_email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCraftData(data));
   }, [user?.email]);
