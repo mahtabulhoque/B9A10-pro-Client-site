@@ -22,7 +22,7 @@ const MyArtCraft = () => {
       <div className="grid md:grid-cols-2 gap-4" >
       {
       craftData.length <= 0 ? (
-        <h1>No dta added</h1>
+        <h1 className="text-center text-2xl m-10">No data added</h1>
       ) : (
         craftData.map(data => <SingleCraft key={data._id}
         data={data}></SingleCraft>)
