@@ -40,7 +40,7 @@ const UpdateData = () => {
             Customization: {customization}
           </p>
           <div className="card-actions justify-end">
-            <button className="btn">Upadte</button>
+            <button className="btn">Update</button>
           </div>
         </div>
       </div>

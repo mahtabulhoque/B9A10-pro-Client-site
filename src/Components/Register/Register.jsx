@@ -1,20 +1,20 @@
-import { useContext } from "react";
+import { useRef, useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2';
 import { Link } from "react-router-dom";
 
 const Register = () => {
   const { createUser, updateUser, setUser } = useContext(AuthContext);
+  const formRef = useRef(null);
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const form = e.target;
+    const form = formRef.current;
     const name = form.name.value;
     const email = form.email.value;
     const photoUrl = form.photoUrl.value;
     const password = form.password.value;
 
-    // Password verification
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordRegex.test(password)) {
       Swal.fire({
@@ -23,36 +23,30 @@ const Register = () => {
         icon: 'error',
         confirmButtonText: 'OK'
       });
-      return; // Stop execution if password doesn't meet the requirements
+      return;
     }
 
     try {
-      const result = await createUser(email, password);
-      const { user } = result;
-      console.log(user);
+    
+      const { user } = await createUser(email, password);
 
+   
       await updateUser(name, photoUrl);
-      setUser({ displayName: name, photoUrl: photoUrl });
 
-      const userData = { name, email, password, photoUrl };
-      const response = await fetch('https://b9-a10-assignment-client-server.vercel.app/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userData)
+
+      setUser({ displayName: name, photoURL: photoUrl });
+
+   
+      Swal.fire({
+        title: 'Success!',
+        text: 'Registration Successful',
+        icon: 'success',
+        confirmButtonText: 'OK'
       });
 
+    
+      form.reset();
 
-      const data = await response.json();
-      if (data.insertedId) {
-        Swal.fire({
-          title: 'Success!',
-          text: 'Registration Successful',
-          icon: 'success',
-          confirmButtonText: 'OK'
-        });
-      }
     } catch (error) {
       console.error(error);
       Swal.fire({
@@ -72,7 +66,7 @@ const Register = () => {
           <p className="py-6">Please Register Here</p>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleRegister} className="card-body">
+          <form ref={formRef} onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
